@@ -1,0 +1,43 @@
+/*  This file is part of Lilisp.
+ *  Copyright (C) 2008  Julio Cesar Serrano Ortuno
+ * 
+ *  Lilisp is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  Lilisp is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with Lilisp.  If not, see <http://www.gnu.org/licenses/>.
+ */
+package julk.net.w3s.language;
+
+import julk.net.w3s.language.bit.Bit;
+
+public class SeparateThread implements Runnable {
+
+	Program pgm;
+	Instruction inst;
+	String code;
+	public SeparateThread(Program _pgm, Instruction _inst, String _code) {
+		pgm = _pgm;
+		inst = _inst;
+		code = _code;
+	}
+	
+	public void run() {
+		try {
+			pgm.execute(code, inst, true);
+		}catch (BreakException be) {
+		}catch (ContinueException ce) {
+		}catch (ReturnException re) {
+		}catch (CodeException codee) {
+		}catch (Exception e) {
+			Bit.signalError(inst, e.getMessage());
+		}					
+	}
+}

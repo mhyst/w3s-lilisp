@@ -1,0 +1,112 @@
+Ok, here I am. Sorry for having you waiting that much time. I've been a bit busy with other things (work), and I've also been doing some improvements to W3S I'll tell you all about later. But now I have the time to make you some questions and discuss things (if needs be). 
+
+I understood all your text (I think). But the pseudocode part is confusing to me. So would you mind rewriting it provided some functions we'll have? (So to be sure I understand it well). 
+
+From your code, I've "extracted" some functions I think we need in order to do the job. I'll put these functions over the table along with some rules for the pseudocode. 
+
+Functions 
+--------------- 
+
+- getInternalLinksFromPage(page) 
+Gets any internal link from "page" 
+returns a set 
+
+- getInternalLinksFromSet(set) 
+Gets any internal link from all pages of a "set" 
+returns a set 
+
+- getExternalLinksFromPage(page) 
+Gets any external link from "page" 
+returns a set 
+
+- getExternalLinksFromSet(set) 
+Gets any external link from all pages of a "set" 
+returns a set 
+
+- getAllLinksFromPage(page) 
+Gets every link from "page" 
+returns a set 
+
+- getAllLinksFromSet(set) 
+Gets every link from all pages of a "set" 
+returns a set 
+
+Note: this functions will know the limits you've fixed and will apply it automatically. 
+
+
+Variable Types 
+-------------------- 
+Set 
+Link 
+Array 
+Integer 
+
+Examples: 
+CN: Set of Link 
+LN: Array of Set of Link 
+
+Arrays usage 
+-------------------------- 
+We'll use brackets ([]) to refer to an array element. 
+Example 
+LN: Array of Set of Link 
+LN[0] = getExternalLinksFromSet(CN) 
+
+Sets usage 
+----------------------- 
+Sets have the following functions: 
+
+Declaration: 
+CN: Set of Link //We have to specify the type of their elements as well. 
+Initialization: 
+CN = {} //empty set 
+CN = {A,B,C} 
+
+Contains: 
+CN.contains(A) //Boolean function 
+CN.intersects(set) //Boolean function 
+CN.union(set) //You still can use the union operator you're using now. 
+CN.isEmpty() //To see if a set is empty (boolean) 
+... 
+
+Assignation 
+--------------- 
+Assignation should be made with the equal (=) operator. For instance: 
+
+Seed: Link //Separated declaration and assignation 
+Seed = A 
+
+or 
+
+Seed: Link = A //Declaration and assignation inline 
+
+--- 
+Another example using a function: 
+
+CN: Set of Link 
+CN = getInternalLinksFromPage(A) 
+
+or 
+
+CN: Set of Link = getInternalLinksFromPage(A) 
+-------------------------------------------------------------------- 
+
+If you need more functions or have any doubts about these general rules for coding, please make me know. 
+
+
+LN variable is the more confusing part of your pseudocode. First you use LN_0, then you use a index LN[B]. B is a link; do you mean that every B has its own LN[B]? then why do you use an index later: LN[i+1] or LN[i]. I hope you can explain better with the new rules and functions. 
+
+Other doubious thing is: 
+>for each B in CN find the out-links; 
+>... 
+>get the set LN(B) of liked sites from B; 
+The "find the out-links" is different from "liked sites from B"? 
+If it's different, what are you using that "find the out-links" for? 
+I can't see any further references to it. 
+
+
+Well, from what I see, this isn't too complex to code. Of course, I have already most of the required functions on W3S. But please, bear in mind that the function getXXXXFromSet will take quite much time (it depends on the quantity of links stored in the set). Anyway that time may be worth for us. 
+
+Best regards, 
+Work well! 
+mhyst
