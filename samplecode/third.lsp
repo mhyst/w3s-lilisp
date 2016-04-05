@@ -1,3 +1,5 @@
+#Código obsoleto. Las variables necesitan indicarse con $ y el código del
+programa debe estar entre paréntesis a su vez.#
 #Probando estructuras if anidadas#
 (defun doble (num) (
 	(return (* num 2)))
