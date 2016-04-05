@@ -1,3 +1,7 @@
+; Código obsoleto
+; Las variables deben llamarse como '$nombre'
+; El programa debe considerarse como una lista de instrucciones. Debe tener paréntesis inicial y final
+; para contener la lista
 (include lib.lsp)
 #Factorial calc#
 (defun factorial (f) (
